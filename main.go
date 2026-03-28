@@ -61,7 +61,10 @@ func main() {
 			continue
 		}
 
-		inventory[product] = Product{Price: price, Quantity: quantity}
+		inventory[product] = Product{
+			Price:    price,
+			Quantity: quantity,
+		}
 	}
 	// 3. Display store information
 	fmt.Printf("=== %s Inventory System ===\n", storeName)
@@ -75,9 +78,12 @@ func main() {
 	}
 	// 5. Calculate and display inventory statistics
 	fmt.Println("Inventory Statistics:")
-	fmt.Printf("Total Products: %d\n", len(inventory))
-	fmt.Printf("Total Items in Stock: %d\n", calcTotalQuantity(inventory))
-	fmt.Printf("Total Inventory Value: $%.2f\n", calcTotalValue(inventory))
+	totalProducts := len(inventory)
+	itemsInStock := calcTotalQuantity(inventory)
+	totalItemsValue := calcTotalValue(inventory)
+	fmt.Printf("Total Products: %d\n", totalProducts)
+	fmt.Printf("Total Items in Stock: %d\n", itemsInStock)
+	fmt.Printf("Total Inventory Value: $%.2f\n", totalItemsValue)
 	// 6. Display system status
 	fmt.Println("System Status: Ready")
 	fmt.Println("Inventory management system initialized successfully")
