@@ -131,4 +131,5 @@ func UpdateStockMain() {
 	} else {
 		fmt.Println("All stock updates were processed successfully")
 	}
+
 }
