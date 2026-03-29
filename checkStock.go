@@ -21,7 +21,7 @@ func checkStock(inventory map[string]Product, productName string) (int, error) {
 	return 0, err
 }
 
-func CheckingStockMain() {
+func CheckStockMain() {
 	inventory := make(map[string]Product)
 
 	// Read input using bufio.Scanner to handle spaces properly
